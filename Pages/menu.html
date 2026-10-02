@@ -4,61 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kooking with Khwezi - Menu</title>
-
+    <!-- Google Fonts: Playfair Display (headings) + Lato (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
+  <!-- One external stylesheet shared by every page -->
     <link rel="stylesheet" href="../Styles/styles.css">
 </head>
 <body>
-    <header>
-       <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="200" height="200">
-    <h1>KOOKING WITH KHWEZI</h1>
-    <nav>
+    <header class="site-header">
+       <div class="header-inner">
+      <a class="brand" href="index.html">
+       <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="40" height="40">
+    <span>KOOKING WITH KHWEZI</span></a>
+       <!-- Checkbox and label toggle the mobile menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-burger" aria-label="Open or close the menu">&#9776;</label>
+
+    <nav class="main-nav" aria-label="Main navigation">
         <ul>
             <li><a href="../index.html">HOME</a></li>
              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="menu.html">MENU</a></li>
+              <li><a href="menu.html" class="current" aria-current="page">MENUS</a></li>
                <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="services.html">SERVICES</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
     </nav>
+       </div>
     </header>
-    <main>
-   <!--Hero band plus one CTA button-->
+    
+    <!--Hero band plus one CTA button-->
    <!--menu photo dimensions will be 600x600px-->
-   <section>
-    <h2>Our Culinary Expertise </h2>
-    <p> <a href="contact.html">Get in touch &gt;</a></p>
+   <section class="hero">
+    <div class="header-inner">
+    <h1>Our Culinary Expertise </h1>
+    <p>Browse by category.</p>
+    <div class="hero-actions">
+    <a class="btn"  href="contact.html">Get in touch</a>
+      </div>
+    </div>
    </section>
    
    <!--The menu items with categories-->
-   <figure>
-    <img src="image-preview-1.jpg" alt="Harvest Table">
-    <figcaption>Event Catering <br> R1000 </figcaption>
-   </figure>
+   <main>
+   <section class="section">
+    <h2>Events Catering</h2>
+    <div class="grid grid--3">
+     <article class="card">
+    <img src="../Assets/images/Harvest-Table-800.jpg" srcset="../Assets/images/Harvest-Table-400.jpg 400w, ../Assets/images/Harvest-Table-800.jpg 800w " sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw"  alt="Harvest Table" width="800" height="600" loading="lazy"> 
+    <div class="card-body"><h3>Harvest Table</h3>
+      <p>Fresh favourites</h3><p>Fresh fruits picked straight from our farm to your table.</p>
+      <p class="price">R5000</p>
+       </div>
+        </article>
+         </section>
 
-     <figure>
-   <img src="image-preview-2.jpg" alt="Desert Table">
-    <figcaption>Event Catering  <br> Get a quote </figcaption>
-   </figure>
-
-     <figure>
-   <img src="image-preview-3.jpg" alt="Canapes">
-    <figcaption>Event Catering <br> Get a quote </figcaption>
-   </figure>
-
-     <figure> 
-   <img src="image-preview-4.jpg" alt="Carrot Cake">
-    <figcaption>Event Catering R980 </figcaption>
-   </figure>
+     <section class="section">
+      <h2>Events Catering</h2>
+    <div class="grid grid--3">
+     <article class="card">
+   <img src="../Assets/images/desertable-800.png.jpg" srcset="../Assets/images/desertable-400.png.jpg 400w, ../Assets/images/desertable-800.png.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Desert Table"  width="800" height="600" loading="lazy">
+      <div class="card-body"><h3>Desert Table</h3>
+        <p>The desert table consists of various flavours from pepermint crips tart cups to Choclate mousse cups.</p>
+        <p class="price">Serving of 20 cups: R1500</p>
+      </div>
+        </article>
+      </div>
+    </section>
     
-    <figure>
-   <img src="image-preview-5.jpg" alt="Mac and Chesse">
-    <figcaption>Weekday Menu <br> R80 </figcaption>
-   </figure>
+     <section class="section">
+      <h2>Events Catering</h2>
+      <div class="grid grid--3">
+     <article class="card">
+   <img src="../Assets/images/private-chef2-resized-800.png.jpg" srcset="../Assets/images/private-chef2-resized-400.png.jpg 400w, ../Assets/images/private-chef2-resized-800.png.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Canapes" width="800" height="600" loading="lazy">
+    <div class="card-body"><h3>Canapes</h3>
+        <p>Freshly bread topped with cream chesse, freah vegetables and/or rump steak.</p>
+        <p class="price">Serving of 20 canapes: R2500</p>
+      </div>
+        </article>
+      </div>
+    </section>
+
+     <section class="section"> 
+      <h2>Events Catering</h2>
+      <div class="grid grid--3">
+        <article class="card"> 
+   <img src="../Assets/images/Paw-petrol-cake-800.jpg" srcset="../Assets/images/Paw-petrol-cake-400.jpg 400w, ../Assets/images/Paw-petrol-cake-800.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Birthday Cake"  width="800" height="600" loading="lazy">
+    <div class="card-body"><h3>Custom Cake</h3>
+        <p>Freshly baked cakes with any flavour of your choice.</p>
+        <p class="price">Starting price: R800</p>
+      </div>
+        </article>
+      </div>
+    </section>
+    
+    <section class="section">
+      <h2>Weekday Menu</h2>
+      <div class="grid grid--3">
+        <article class="card"> 
+   <img src="../Assets/images/cinnamon-rolls-800.jpg" srcset="../Assets/images/cinnamon-rolls-400.jpg 400w, ../Assets/images/cinnamon-rolls-800.jpg 800" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Cinnamon Rolls" width="800" height="600" loading="lazy">
+   <div class="card-body"><h3>Cinnamon Rolls</h3>
+        <p>Freshly baked, soft and fluffy rolls with four different flavours.</p>
+        <p class="price">Starting price: R250</p>
+      </div>
+        </article>
+      </div>
+    </section>
   
     <figure>
    <img src="image-preview-6.jpg" alt="Beef Smash Burger">
@@ -66,9 +118,16 @@
    </figure>
     </main>
 
-    <footer>
-        <P>KOOKING WITH KHWEZI</P>
-          <nav>
+     <footer class="site-footer">
+        <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" width="120" height="120">
+        <h3>KOOKING WITH KHWEZI</h3>
+        <p>Bringing fresh and organic food to the community</p>
+      </div>
+
+        <div>
+          <h3>Quick links</h3>
         <ul>
             <li><a href="../index.html">HOME</a></li>
              <li><a href="about.html">ABOUT</a></li>
@@ -77,15 +136,27 @@
                 <li><a href="services.html">SERVICES</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
-    </nav>
+        </div>
+
+        </div>
+          <h3>Business Details</h3>
+        <ul>
+          <li>Email: <a href="mailto:khwezilomso686@gmail.com">Khwezilomso686@gmail.com</a></li>
+          <li>Phone: <a href="tel:+27110000000">068 536 0225</a></li>
           <p>
             Follow us on:
             <a href="https://instagram.com">Instagram</a> |
              <a href="https://tiktok.com">TikTok</a>      
         </p>
-        <p>
-            &copy;2026 Kooking with Khwezi. All rights reserved.
-        </p>
+        </ul>
+
+        <div class="footer-map">
+            <h3>Find Us</h3>
+           <img src="../Assets/images/pinned-map.png" alt="Pinned map of the Kooking with Khwezi location" width="400" height="250">
+        </div>
+    </div>
+           <p class="copyright"> &copy;2026 Kooking with Khwezi. All rights reserved.</p>
+        
     </footer>
 </body>
 </html>
