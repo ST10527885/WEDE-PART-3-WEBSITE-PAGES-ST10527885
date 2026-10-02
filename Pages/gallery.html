@@ -4,64 +4,140 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kooking with Khwezi- Gallery</title>
-
+ <!-- Google Fonts: Playfair Display (headings) + Lato (body) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
+ 
+<!-- One external stylesheet shared by every page -->
     <link rel="stylesheet" href="../Styles/styles.css">
-
 </head>
 <body>
-    <header>
-    <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="200" height="200">
-    <h1>KOOKING WITH KHWEZI</h1>
-    <nav>
+
+    <!--Header with sticky top bar with logo, name and navigation-->
+    <header class="site-footer">
+         <div class="header-inner">
+             <a class="brand" href="index.html">
+    <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="40" height="40">
+    <span>KOOKING WITH KHWEZI</span></a>
+
+     <!-- Checkbox and label toggle the mobile menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-burger" aria-label="Open or close the menu">&#9776;</label>
+    <nav class="main-nav" aria-label="Main navigation">
         <ul>
             <li><a href="../index.html">HOME</a></li>
              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="menu.html">MENU</a></li>
-               <li><a href="gallery.html">GALLERY</a></li>
+              <li><a href="menu.html">MENUS</a></li>
+               <li><a href="gallery.html" class="current" aria-current="page">GALLERY</a></li>
                 <li><a href="services.html">SERVICES</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
     </nav>
+   </div>
     </header>
-    <main>
+
    <!--Hero band plus one CTA button-->
-   <section>
-    <h2>Our Gallery</h2>
-    <p> <a href="contact.html">Get in touch &gt;</a></p>
+   <section class="hero">
+    <div class="hero-inner">
+    <h1>Our Gallery</h1>
+    <p>A taste of what comes out of the kitchen</p>
+    <div class="hero-actions">
+    <a class="btn" href="contact.html">Get in touch</a>
+    </div>
+    </div>
    </section>
+
+   <main>
   <!--This page display all the food offered for events only-->
-   <section>
-    <h3>Food and Event Photos</h3>
-     <!--photo dimensions will be 800x1000px-->
+   <section class="section">
+    <div class=" gallery-grid">
+    <h2>Food and Event Photos</h2>
     <figure>
-        <img src="gallery-1.jpg">
+        <img src="../Assets/images/hero2-800.jpg" srcset="../Assets/images/hero2-400.jpg 400w, ../Assets/images/hero2-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="Event Decor" loading="lazy">
+        <figcaption>Event Table Setup</figcaption>
+    </figure>
+
+    <figure>
+        <img src="../Assets/images/chocdesertable-800.jpg"
+        srcset="../Assets/images/chochdesertable-400.jpg 400w , ../Assets/images/chocdesertable-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="Choclate Mousse Cups" loading="lazy" >
         <figcaption>Choclate Mousse Cups</figcaption>
     </figure>
     
        <figure>
-        <img src="gallery-2.jpg">
-        <figcaption>Basque Cheescake</figcaption>
+        <img src="../Assets/images/Event-1-800.jpg" 
+        srcset="../Assets/images/Event-1-400.jpg 400w, ../Assets/images/Event-1-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="Canapes" loading="lazy">
+        <figcaption>Canape Spread</figcaption>
     </figure>
 
     <figure>
-        <img src="gallery-3.jpg">
-        <figcaption> Hearty Beef Stew</figcaption>
+        <img src="../Assets/images/croquettes-private-800.jpg" srcset="../Assets/images/croquettes-private-400.jpg 400w, ../Assets/images/croquettes-private-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="Croquettes" loading="lazy">
+        <figcaption>Cheesy Croquettes</figcaption>
     </figure>
 
       <figure>
-        <img src="gallery-4.jpg">
-        <figcaption> Chesse Croquettes</figcaption>
+        <img src="../Assets/images/breakfast-catering-800.jpg" srcset="../Assets/images/breakfast-catering-400.jpg 400w, ../Assets/images/breakfast-catering-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="Breakfast" loading="lazy" >
+        <figcaption> Breakfast Spread</figcaption>
     </figure>
-   </section>
-    </main>
 
-    <footer>
-          <P>KOOKING WITH KHWEZI</P>
-          <nav>
+    <figure>
+        <img src="../Assets/images/chickenlivers-800.jpg" srcset="../Assets/images/chickenlivers-400.jpg 400w, ../Assets/images/chickenlivers-800.jpg 800w " sizes="(max-width: 600px) 50vw, 33vw" alt="chickenlivers" loading="lazy" >
+        <figcaption>Creamy Chicken Livers</figcaption>
+    </figure>
+  
+
+   <figure>
+        <img src="../Assets/images/Mac-chesse-800.jpg" srcset="../Assets/images/Mac-chesse-gallery.jpg 400w, ../Assets/images/Mac-chesse-800.jpg 800w " sizes="(max-width: 600px) 50vw, 33vw" alt="Mac & Cheese" loading="lazy" >
+        <figcaption>Glazed Cripsy Chicken and Mac & Cheese</figcaption>
+    </figure>
+   
+    <figure>
+        <img src="../Assets/images/gallery-cupcakes-800.jpg" srcset="../Assets/images/gallery-cupcakes-400.jpg 400w, ../Assets/images/gallery-cupcakes-800.jpg 800w " sizes="(max-width: 600px) 50vw, 33vw" alt="Cupcakes" loading="lazy" >
+        <figcaption>Cupcakes</figcaption>
+    </figure>
+
+    <figure>
+        <img src="../Assets/images/choclatepudding-800.jpg" srcset="../Assets/images/choclatepudding-400.jpg 400w, ../Assets/images/choclatepudding-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="Pudding" loading="lazy" >
+        <figcaption>Rich and Creamy Choclate Pudding</figcaption>
+    </figure>
+
+   <figure>
+        <img src="../Assets/images/snackboard-800.jpg" srcset="../Assets/images/snackboard-400.jpg 400w, ../Assets/images/snackboard-800.jpg 800w " sizes="(max-width: 600px) 50vw, 33vw" alt="snackboard" loading="lazy" >
+        <figcaption>Small Charcuterie board</figcaption>
+    </figure>
+
+    <figure>
+        <img src="../Assets/images/birthday1-800.jpg" srcset="../Assets/images/birthday1-400.jpg 400w, ../Assets/images/birthday1-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="snackboard" loading="lazy" >
+        <figcaption>Mini Individual Charcuterie boards</figcaption>
+    </figure>
+
+    <figure>
+        <img src="../Assets/images/steak-private-800.jpg" srcset="../Assets/images/steak-private-400.jpg 400w, ../Assets/images/steak-private-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="Private dinner" loading="lazy" >
+        <figcaption>Steak dinner| Private Chef services</figcaption>
+    </figure>
+
+    <figure>
+        <img src="../Assets/images/sorbet-800.jpg" srcset="../Assets/images/sorbet-400.jpg 400w, ../Assets/images/sorbet-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="Sorbet" loading="lazy" >
+        <figcaption>Berry Sorbet</figcaption>
+    </figure>
+
+    <figure>
+        <img src="../Assets/images/birthdaydeserttable-800.jpg" srcset="../Assets/images/birthdaydeserttable-400.jpg 400w, ../Assets/images/birthdaydeserttable-800.jpg 800w" sizes="(max-width: 600px) 50vw, 33vw" alt="Desert Table" loading="lazy" >
+        <figcaption>Desert Table</figcaption>
+    </figure>
+</section>
+    </main>
+    
+ <footer class="site-footer">
+        <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" width="120" height="120">
+        <h3>KOOKING WITH KHWEZI</h3>
+        <p>Bringing fresh and organic food to the community</p>
+      </div>
+
+        <div>
+          <h3>Quick links</h3>
         <ul>
             <li><a href="../index.html">HOME</a></li>
              <li><a href="about.html">ABOUT</a></li>
@@ -70,16 +146,27 @@
                 <li><a href="services.html">SERVICES</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
-    </nav>
+        </div>
+
+        </div>
+          <h3>Business Details</h3>
+        <ul>
+          <li>Email: <a href="mailto:khwezilomso686@gmail.com">Khwezilomso686@gmail.com</a></li>
+          <li>Phone: <a href="tel:+27110000000">068 536 0225</a></li>
           <p>
             Follow us on:
             <a href="https://instagram.com">Instagram</a> |
              <a href="https://tiktok.com">TikTok</a>      
         </p>
-        <p>
-            &copy;2026 Kooking with Khwezi. All rights reserved.
-        </p>
-    </footer>
+        </ul>
 
+        <div class="footer-map">
+            <h3>Find Us</h3>
+           <img src="../Assets/images/pinned-map.png" alt="Pinned map of the Kooking with Khwezi location" width="400" height="250">
+        </div>
+    </div>
+           <p class="copyright"> &copy;2026 Kooking with Khwezi. All rights reserved.</p>
+        
+    </footer>
 </body>
 </html>
