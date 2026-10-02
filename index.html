@@ -5,19 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kooking with Khwezi - Home</title>
 
+   <!--Google fonts: Playfair Display (headings) and Lato (body)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    
+ 
+<!---An external stylesheet shared by every page-->>   
 <link rel="stylesheet" href="../Kooking With Khwezi/Styles/styles.css">
 </head>
 <body>
-    <header>
+    <header class="site-header">
+        <div class="header-inner">
     <!--Company name and logo-->
-    <img src="../Kooking With Khwezi/Assets/images/Kooking with Khwezi logo.png.png" alt="Kooking with Khwezi logo" width="200" height="200"> <!--logo-->
+    <img src="../Kooking With Khwezi/Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="200" height="200"> <!--logo-->
     <h1>KOOKING WITH KHWEZI</h1>
+    <input type="checkbox" id="nav-toggle" class="nav-toggle">
+    <label for="nav-toggle" class="nav-burger" aria-label="Open or close the menu">&#9776;</label>
+    
     <!--Navigation menu-->
-    <nav>
+    <nav class="main-nav" aria-label="Main Navigation"></nav>
         <ul>
             <li><a href="index.html">HOME</a></li>
             <li><a href="Pages/about.html">ABOUT</a></li>
@@ -27,49 +33,64 @@
                 <li><a href="Pages/contact.html">CONTACT US</a></li>
         </ul>
     </nav>
+    </div>
      </header>
-     <main>
-        <!--Hero band plus two CTA Buttons-->
-        <section>
+     
+        <!--Hero band repeated on most pages-->
+        <section class="hero hero">
+            <div class="hero inner">
          <h2>Welcome to Kooking with Khwezi</h2>
-         <p>
-            <a href="Pages/menu.html">View Menu</a>
-            <a href="Pages/services.html">Our Services</a>
-         </p>   
+         <p> Trendy, traditional cuisine and baked goods for your table and your events. </p> 
+            <a class="btn" href="Pages/menu.html">View Our Menus</a>
+            <a class="btn" href="Pages/services.html">Our Services</a>
+         </div> 
         </section>
 
-       <section>
-        <h3>ABOUT / KOOKING WITH KHWEZI <br> WHO WE ARE</h3>
+       <main>
+       <section class="section intro">
+        <div></div>
+        <h2>Welcome to Khwezi's Kitchen <br> WHO WE ARE</h2>
         <p>
-            Kooking with Khwezi is an independent neighbourhood catering company selling trendy, <br> traditional, culinary cuisine and baked goods,<br>  which also supplies catering services for various events.
+            Kooking with Khwezi is an independent neighbourhood catering company selling trendy, <br> traditional, culinary cuisine and baked goods,<br>  which also supplies catering services for weddings, funerals, birthdays and private gartherings.
         </p>
+        </div>
+        <aside class="Hours" aria-label="Operating hours">
+         <h3>Operating hours</h3>   
+         <ul><li>Mon to Fri: 10:00 to 19:00 </li><li>Saturday: Closed for events</li><li>Sunday: Closed for events</li></ul>
+        </aside>
        </section>
 
-       <section>
+       <section class="section">
+        <div class="grid grid--3">
+        <article class="card">
         <!--The preview image dimensions will be 800x600px-->
         <h4>A TASTE OF WHAT WE OFFER</h4>
-        <figure>
-            <img src="image-preview-1.jpg" alt="Harvest Table">
-            <figcaption>Event Catering</figcaption>
-        </figure>
+        
+            <img src="Assets/images/Harvest-Table-800.jpg" srcset="Assets/images/Harvest-Table-400.jpg 400w, Assets/images/Harvest-Table-800.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Harvest Table" width="800" height="600" loading="lazy" >
+            <div class="card-body"><h3>Fresh favourites</h3><p>Fresh fruits picked straight from our farm to your table.</p></div>
+        </article>
 
-        <figure>
-            <img src="image-preview-2.jpg" alt="Canapes">
-            <figcaption>Event Catering</figcaption>
-        </figure>
-
-        <figure>
-            <img src="image-preview-3.jpg" alt="Desert Table">
-            <figcaption>Event Catering</figcaption>
-        </figure>
+        <article class="card">
+            <img src="Assets/images/private-chef2-resized-800.png.jpg" srcset="Assets/images/private-chef2-resized-400.png.jpg 400w, Assets/images/private-chef2-resized-800.png.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Canapes" width="800" height="600" loading="lazy">
+             <div class="card-body"><h3>Canapes</h3><p>Freshly baked bread and farm grown vegetables.</p></div>
+        </article>
+        
+        <article class="card">
+            <img src="Assets/images/desertable-800.png.jpg" srcset="Assets/images/desertable-400.png.jpg 400w, Assets/images/desertable-800.png.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Desert Table" width="800" height="600" loading="lazy" >
+                  <div class="card-body"><h3>Event catering</h3><p>Baked goods from scratch for any occasion.</p></div> 
+        </article>
+        </div>
        </section>
      </main>
 
      <!--Site footer with business details, social media links and location-->
 
-     <footer>
-          <P>KOOKING WITH KHWEZI</P>
-          <nav>
+     <footer class="site-footer">
+        <div class="footer-grid">
+            <div>
+          <p class="footer-brand"> KOOKING WITH KHWEZI</p>
+            </div>
+            <h2>Quick linls</h2>
         <ul>
             <li><a href="index.html">HOME</a></li>
              <li><a href="Pages/about.html">ABOUT</a></li>
@@ -78,15 +99,24 @@
                 <li><a href="Pages/services.html">SERVICES</a></li>
                  <li><a href="Pages/contact.html">CONTACT US</a></li>
         </ul>
-    </nav>
-        <p>
+        </div>
+        <div>
+            <h3>Business details</h3>
+            <ul>
+           <li>Tel: 068 536 0225</li>
+     
             Follow us on:
-            <a href="https://instagram.com">Instagram</a> |
+            <a href="https://www.instagram.com/khwezis_mobile_kitchen?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==">Instagram</a> |
              <a href="https://tiktok.com">TikTok</a>      
-        </p>
-        <p>
-            &copy;2026 Kooking with Khwezi. All rights reserved.
-        </p>
-     </footer>
+            </ul>
+        </div>
+       <div>
+        <h2>Find us</h2>
+        <!-- Placeholder for pinned map: swap for a Google Maps embed iframe -->
+        <div class="map-box map-box--small" role="img" aria-label="Map placeholder">Map pin</div>
+      </div>
+    </div>
+    <p class="copyright">&copy; 2026 Kooking with Khwezi</p>
+  </footer>
 </body>
 </html>
