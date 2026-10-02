@@ -4,92 +4,108 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kooking with Khwezi - Services</title>
-    <!--Google fonts: Playfair Display (headings) and Lato (body)-->
-    
+    <!--Google fonts: Playfair Display (headings) and Lato (body)-->   
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-    
+    <!--One external stylesheet shared by every page-->>
     <link rel="stylesheet" href="../Styles/styles.css">
 </head>
 <body>
-     <header>
-       <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="200" height="200">  
-    <h1>KOOKING WITH KHWEZI</h1>
-    <nav>
+     <header class="site-header">
+        <div class="header-inner">
+       <a class="brand" href="index.html"><img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="40" height="40">  
+    <span>KOOKING WITH KHWEZI</span></a>
+    
+<!-- Checkbox + label toggle the mobile menu without JavaScript -->
+     <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-burger" aria-label="Open or close the menu">&#9776;</label>
+    <nav class="main-nav" aria-label="Main navigation">
         <ul>
             <li><a href="../index.html">HOME</a></li>
              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="menu.html">MENU</a></li>
+              <li><a href="menu.html">MENUS</a></li>
                <li><a href="gallery.html">GALLERY</a></li>
-                <li><a href="services.html">SERVICES</a></li>
+                <li><a href="services.html" class="current" aria-current="page">SERVICES</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
     </nav>
+    </div>
     </header>
-    <main>
+    
    <!--Hero band plus one CTA button-->
-   <!--Image dimensions will be 800x600px-->>
-   <section>
+    <section class="hero ">
+    <div class="hero-inner">
     <h2>Our Catering Services</h2>
-    <p> <a href="contact.html">Get in touch &gt;</a></p>
+    <p>Catering and baking for every kind of occasion.</p>
+         <a class="btn" href="contact.html">Get in touch</a>
+    </div>
+    </div>
    </section>
-
+   <main>
    <!--Columns of service cards -->
-   <section>
-    <article>
-        <img src="wedding-service.jpg">
-        <figcaption>Wedding Catering </figcaption>
+   <section class="section">
+    <div class="grid grid--3">
+    <article class="card">
+        <img src="../Assets/images/wedding-catering-800.jpg" srcset="../Assets/images/wedding-catering-400.jpg 400w, ../Assets/images/wedding-catering-800.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Wedding catering" width="800" height="600" loading="lazy">
+        <div class="card-body">
         <h3> Wedding Catering</h3>
         <p>Full services catering for wedding celebrations, from canapes to plated meals. <br> Packages start from R15 000</p>
-        <p><a href="contact.html">Enquire Now</a></p> 
+        <a class="btn--small" href="contact.html">Enquire Now</a></div> 
     </article>
   
-    <article>
-        <img src="Coroporate-service.jpg">
-        <figcaption>Coporate Catering </figcaption>
+    <article class="card">
+        <img src="../Assets/images/Event-1-800.jpg" srcset="../Assets/images/Event-1-400.jpg 400w, ../Assets/images/Event-1-800.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Coporate catering" width="800" height="600" loading="lazy">
+         <div class="card-body">
         <h3> Coporate Catering</h3>
         <p>Catering for meetings, conferences and office functions <br> Packages start from R5 000</p>
-        <p><a href="contact.html">Enquire Now</a></p> 
+        <a class="btn--small" href="contact.html">Enquire Now</a></div> 
     </article>
 
-    <article>
-        <img src="Private Chef-service.jpg">
-        <figcaption>Private Catering </figcaption>
+    <article class="card">
+        <img src="../Assets/images/steak-private-800.jpg" srcset="../Assets/images/steak-private-400.jpg 400w, ../Assets/images/steak-private-800.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Private catering" width="800" height="600" loading="lazy">
+        <div class="card-body">
         <h3> Private Catering</h3>
         <p>Custom menu for private catering of any size. <br> Packages start from R9 000</p>
-        <p><a href="contact.html">Enquire Now</a></p> 
+        <a class="btn--small" href="contact.html">Enquire Now</a></div> 
     </article>
  
-    <article>
-        <img src="Birthday-service.jpg">
-        <figcaption>Birthday Party Catering </figcaption>
+    <article class="card">
+        <img src="../Assets/images/cupcakes-birtday-800.jpg" srcset="../Assets/images/cupcakes-birtday-400.jpg 400w, ../Assets/images/cupcakes-birtday-800.jpg 800w " sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Birthday catering" width="800" height="600" loading="lazy">
+        <div class="card-body">
         <h3> Birthday Party Catering</h3>
         <p>Custom menu and baked goods for birthday celebrations of any size. <br> Packages start from R10 000</p>
-        <p><a href="contact.html">Enquire Now</a></p> 
+        <a class="btn--small" href="contact.html">Enquire Now</a></div> 
     </article>
         
-     <article>
-        <img src="Funeral-service.jpg">
-        <figcaption>Funeral Catering </figcaption>
+     <article class="card">
+        <img src="../Assets/images/Funeral-cater-800.jpg" srcset="../Assets/images/Funeral-cater-400.jpg 400w, ../Assets/images/Funeral-cater-800.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Funeral catering" width="800" height="600" loading="lazy">
+        <div class="card-body">
         <h3> Funeral Catering</h3>
         <p>Respectful, reliable catering for memorial and funeral services. <br> Packages start from R20 000</p>
-        <p><a href="contact.html">Enquire Now</a></p> 
+        <a class="btn--small" href="contact.html">Enquire Now</a></div> 
     </article>
 
-     <article>
-        <img src="Weekday-service.jpg">
-        <figcaption>Weekday Catering </figcaption>
+     <article class="card">
+        <img src="../Assets/images/Chicken-burger-800.jpg" srcset="../Assets/images/Chicken-burger-400.jpg 400w, ../Assets/images/Chicken-burger-800.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Weekday catering" width="800" height="600" loading="lazy">
+        <div class="card-body">
         <h3> Weekday Catering</h3>
         <p> Food requested upon ordering, available for pickup or delivery. <br> Meals start from R80</p>
-        <p><a href="contact.html">Order Now</a></p> 
+        <a class="btn--small" href="contact.html">Order Now</a></div> 
     </article>
    </section>
     </main>
 
-    <footer>
-          <P>KOOKING WITH KHWEZI</P>
-          <nav>
+   <footer class="site-footer">
+        <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" width="40" height="40">
+        <h3>KOOKING WITH KHWEZI</h3>
+        <p>Bringing fresh and organic food to the community</p>
+      </div>
+
+        <div>
+          <h3>Quick links</h3>
         <ul>
             <li><a href="../index.html">HOME</a></li>
              <li><a href="about.html">ABOUT</a></li>
@@ -98,16 +114,27 @@
                 <li><a href="services.html">SERVICES</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
-    </nav>
+        </div>
+
+        </div>
+          <h3>Business Details</h3>
+        <ul>
+          <li>Email: <a href="mailto:khwezilomso686@gmail.com">Khwezilomso686@gmail.com</a></li>
+          <li>Phone: <a href="tel:+27110000000">068 536 0225</a></li>
           <p>
             Follow us on:
             <a href="https://instagram.com">Instagram</a> |
              <a href="https://tiktok.com">TikTok</a>      
         </p>
-        <p>
-            &copy;2026 Kooking with Khwezi. All rights reserved.
-        </p>
-    </footer>
+        </ul>
 
+        <div class="footer-map">
+            <h3>Find Us</h3>
+           <img src="../Assets/images/pinned-map.png" alt="Pinned map of the Kooking with Khwezi location" width="400" height="250">
+        </div>
+    </div>
+           <p class="copyright"> &copy;2026 Kooking with Khwezi. All rights reserved.</p>
+        
+    </footer>
 </body>
 </html>
