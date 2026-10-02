@@ -4,47 +4,56 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kooking with Khwezi - About</title>
-    
+    <!--Googlr Fonts: Playfair Display (headings) + Lato (body)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-
+<!--Single external stylesheet shared by every page-->
     <link rel="stylesheet" href="../Styles/styles.css">
 </head>
 <body>
-    <header>
+    <header class="site-header">
+         <div class="container header-inner">
+      <a class="brand" href="index.html">
      <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="200" height="200">
     <h1>KOOKING WITH KHWEZI</h1>
-    <nav>
+      <input type="checkbox" id="nav-toggle" aria-label="Toggle menu">
+      <label class="hamburger" for="nav-toggle" aria-hidden="true">&#9776;</label>
+    <nav class="main-nav" aria-label="Main navigation">
         <ul>
             <li><a href="../index.html">HOME</a></li>
-             <li><a href="about.html">ABOUT</a></li>
+             <li><a href="about.html" aria-current="page">ABOUT</a></li>
               <li><a href="menu.html">MENU</a></li>
                <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="services.html">SERVICES</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
     </nav>
+    </div>
     </header>
+    
     <main>
-   <!--Hero band plus one CTA button-->
-   <section>
+   <!--Hero band-->
+   <section class="hero herro--page">
     <h2>The Tea On Khwezi</h2>
+    <p>Where a mother's kitchen became a calling.</p>
     <!--CTA Button-->
-    <p> <a href="contact.html">Get in touch &gt;</a></p>
+    <div class="hero-buttons"> <a class="btn" href="contact.html">Get in touch</a></div>
    </section>
+
+   <section class="section">
+   <div class="container split split--about">
    <!--Image of the founder of Kooking with Khwezi and her story-->
    <figure>
-    <img src="founder-image.jpg" alt="Khwezi - The founder and CEO of Kooking with Khwezi">
-    <figcaption> Founder and CEO of Kooking with Khwezi </figcaption>
-   </figure>
+    <img class="profile"  src="../Assets/images/Founder-KWK.jpg" alt="Khwezi - The founder and CEO of Kooking with Khwezi" width="500" height="500">
+    
 
-   <section>
+   <article>
     <h3>Khwezi's Story</h3>
     <p>
     "Cooking is something I have always enjoyed doing and the initial interest stemmed from seeing how my late mother would meticulously and lovingly prepare every delicious meal. When I turned 10 years of age my mother finally started teaching me after I had been constantly nagging her on when I will start cooking on my own. I became a chef through her guidance, self-education and a love for good food. <br> This passion for cooking started to intensify in 2020 during the pandemic where I started exploring making food items from scratch amidst the lockdown. Over time, I honed my skills through practice, experimenting, and learning from various resources. This journey led me to opening my small catering business: Khwezi’s Mobile Kitchen.<br> Cooking became more than a hobby; it became my profession. While it wasn't initially what I planned, my passion for food and creating culinary experiences drove me to pursue it as a career."
     </p>
-   </section>
+</article>
 
    <section>
     <h4>Our Mission</h4>
@@ -55,11 +64,21 @@
     <h5>Our Vision</h5>
     <p>Our vision is to become the town’s go to catering company and the leading independent catering company in South Africa in the next six years. </p>
    </section>
+
+   </div>
+</section>
     </main>
 
-    <footer>
-        <P>KOOKING WITH KHWEZI</P>
-          <nav>
+    <footer class="site-footer">
+        <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" width="120" height="120">
+        <h3>KOOKING WITH KHWEZI</h3>
+        <p>Bringing fresh and organic food to the community</p>
+      </div>
+
+        <div>
+          <h3>Quick links</h3>
         <ul>
             <li><a href="../index.html">HOME</a></li>
              <li><a href="about.html">ABOUT</a></li>
@@ -68,15 +87,27 @@
                 <li><a href="services.html">SERVICES</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
-    </nav>
+        </div>
+
+        </div>
+          <h3>Business Details</h3>
+        <ul>
+          <li>Email: <a href="mailto:khwezilomso686@gmail.com">Khwezilomso686@gmail.com</a></li>
+          <li>Phone: <a href="tel:+27110000000">068 536 0225</a></li>
           <p>
             Follow us on:
             <a href="https://instagram.com">Instagram</a> |
              <a href="https://tiktok.com">TikTok</a>      
         </p>
-        <p>
-            &copy;2026 Kooking with Khwezi. All rights reserved.
-        </p>
+        </ul>
+
+        <div class="footer-map">
+            <h3>Find Us</h3>
+           <img src="../Assets/images/pinned-map.png" alt="Pinned map of the Kooking with Khwezi location" width="400" height="250">
+        </div>
+    </div>
+           <p class="copyright"> &copy;2026 Kooking with Khwezi. All rights reserved.</p>
+        
     </footer>
 </body>
 </html>
