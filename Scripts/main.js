@@ -1,0 +1,6 @@
+/*Main js*/
+// Footer
+var yearSpan = document.getElementById('year');
+if (yearSpan) {
+    yearSpan.textContent = new Date().getFullYear();
+}
