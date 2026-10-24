@@ -51,6 +51,16 @@
    <!--The menu items with categories-->
    <main>
    <section class="section">
+    <h2>Our Menus</h2>
+    <nav class="filter-bar" aria-label="Filter menus">
+    <a herf="#" data-filter="all" class="active">All</a>
+     <a herf="#" data-filter="events">Events Catering</a>
+     <a herf="#" data-filter="weekday">Weekday Menu</a>
+     <a herf="#" data-filter="private">Private Catering</a>
+    </nav>
+   </section>
+
+   <section class="section" data-cat="events">
     <h2>Events Catering</h2>
     <div class="grid grid--3">
      <article class="card">
@@ -60,25 +70,16 @@
       <p class="price">R5000</p>
        </div>
         </article>
-    </div>
-         </section>
 
-     <section class="section">
-      <h2>Events Catering</h2>
-    <div class="grid grid--3">
-     <article class="card">
-   <img src="../Assets/images/desertable-800.png.jpg" srcset="../Assets/images/desertable-400.png.jpg 400w, ../Assets/images/desertable-800.png.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Desert Table"  width="800" height="600" loading="lazy">
-      <div class="card-body"><h3>Desert Table</h3>
+        <article class="card">
+    <img src="../Assets/images/desertable-800.png.jpg" srcset="../Assets/images/desertable-400.png.jpg 400w, ../Assets/images/desertable-800.png.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Desert Table"  width="800" height="600" loading="lazy">
+
+     <div class="card-body"><h3>Desert Table</h3>
         <p>The desert table consists of various flavours from peppermint crips tart cups to Choclate mousse cups.</p>
         <p class="price">Serving of 20 cups: R1500</p>
       </div>
         </article>
-      </div>
-    </section>
     
-     <section class="section">
-      <h2>Events Catering</h2>
-      <div class="grid grid--3">
      <article class="card">
    <img src="../Assets/images/private-chef2-resized-800.png.jpg" srcset="../Assets/images/private-chef2-resized-400.png.jpg 400w, ../Assets/images/private-chef2-resized-800.png.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Canapes" width="800" height="600" loading="lazy">
     <div class="card-body"><h3>Canapes</h3>
@@ -86,13 +87,8 @@
         <p class="price">Serving of 20 canapes: R2500</p>
       </div>
         </article>
-      </div>
-    </section>
-
-     <section class="section"> 
-      <h2>Events Catering</h2>
-      <div class="grid grid--3">
-        <article class="card"> 
+     
+    <article class="card"> 
    <img src="../Assets/images/Paw-petrol-cake-800.jpg" srcset="../Assets/images/Paw-petrol-cake-400.jpg 400w, ../Assets/images/Paw-petrol-cake-800.jpg 800w" sizes="(max-width: 600px) 100vw, (max-width: 960px) 50vw, 33vw" alt="Birthday Cake"  width="800" height="600" loading="lazy">
     <div class="card-body"><h3>Custom Cake</h3>
         <p>Freshly baked cakes with any flavour of your choice.</p>
@@ -100,9 +96,10 @@
       </div>
         </article>
       </div>
-    </section>
+   </section>
     
-    <section class="section">
+    
+    <section class="section" data-cat="weekday">
       <h2>Weekday Menu</h2>
       <div class="grid grid--3">
         <article class="card"> 
@@ -169,7 +166,7 @@
            </div>
         </div>
     </div>
-           <p class="copyright"> &copy;2026 Kooking with Khwezi. All rights reserved.</p>
+     <p class="copyright"> &copy; <span id="year">2026</span> Kooking with Khwezi. All rights reserved.</p>
         
     </footer>
 </body>
