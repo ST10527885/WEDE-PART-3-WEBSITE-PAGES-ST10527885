@@ -191,7 +191,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--rose); }
   text-align: center; color: var(--ivory); padding: 4rem 1.5rem; background: var(--ink);}
   .hero--home {min-height: 81vh;}
   .slides {position: absolute; top: 0; left: 0;
-  width: 500%; height: 100%; display: flex; animation: slideHero 25s infinite ease-in-out;}
+  width: 500%; height: 100%; display: flex; animation: slideHero 15s infinite ease-in-out;}
   .slides img {
     width: 20%;
     height: 100%;
