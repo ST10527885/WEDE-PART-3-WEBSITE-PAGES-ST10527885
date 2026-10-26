@@ -1,7 +1,7 @@
 
 /*Contact js */
 
-var form = document.getElementById('conatct-form');
+var form = document.getElementById('contact-form');
 
 if (form) {
     var rules = [
@@ -34,6 +34,7 @@ if (form) {
         var note = document.createElement('span');
         note.className = 'error-msg';
         note.id = input.id + '-error';
+        note.textContent = msg;
         input.insertAdjacentElement('afterend', note);
     }
 
@@ -67,7 +68,7 @@ if (form) {
         var thanks = document.createElement('div');
         thanks.className = 'form-success';
         var h = document.createElement('h3');
-        h.textContent = 'Thank you,' + name + '!';
+        h.textContent = 'Thank you, ' + name + '!';
         var p = document.createElement('p');
         p.textContent = 'We have received your enquiry and we will get back to you shortly.';
         thanks.appendChild(h);

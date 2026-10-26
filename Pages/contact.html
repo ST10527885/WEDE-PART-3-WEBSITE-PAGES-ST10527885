@@ -46,9 +46,9 @@
     <main class="section two-col">
   <section>
     <h2>Send Us a Message</h2>
-    <h2>Fill in the form for enquiries </h2>
+    <p>Fill in the form for enquiries </p>
 <!--Enquiry form + business's details and location-->
-   <form class="form" action="#" method="post">
+   <form class="form" id="contact-form" action="#" method="post" novalidate>
 
     <p> <label for="name">Full Name:</label>
         <input
@@ -58,7 +58,7 @@
  </p>
 
  <p> <label for="email">Email Address: </label>
-    <input type="email" id="email" pattern="@example.com"/>
+    <input type="email" id="email" name="@example.com"/>
  </p>
 
  <p> <label for="phone">
@@ -169,6 +169,6 @@
      <p class="copyright"> &copy; <span id="year">2026</span> Kooking with Khwezi. All rights reserved.</p>
         
     </footer>
-    <script src="../Scripts/filter.js"></script>
+    <script src="../Scripts/contact.js"></script>
 </body>
 </html>

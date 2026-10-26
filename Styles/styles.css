@@ -286,3 +286,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--rose); }
   }
   .hero--page h1 {font-size: clamp(2rem, 5vw, 3.5rem); color: var(--ivory);}
   .hero--page p {font-size: 1.2rem; margin-left: auto; margin-right: auto;}
+
+  error-msg {display: block; color: #b00020; font-size: 0.85rem; margin-top: 0.25rem;}
+  field-invalid {border-color: #b00020 !important;}
+  fom-success {background: var(--blush); border-left: 6px solid var(--gold); border-radius: var(--radius); padding: 1.5rem;}
