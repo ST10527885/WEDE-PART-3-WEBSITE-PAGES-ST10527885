@@ -35,8 +35,8 @@
               <li><a href="menu.html"></a></li>
                <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="services.html">SERVICES</a></li>
-                 <li><a href="contact.html">CONTACT US</a></li>
                  <li><a href="equiry.html" aria-current="page">Enquire</a></li>
+                 <li><a href="contact.html">CONTACT US</a></li>
         </ul>
     </nav>
        </div>
@@ -100,10 +100,84 @@
 
                 <fieldset>
                     <legend>Add extras (optional)</legend>
-                    
+                    <label class="choice"><input type="checkbox" name="extras" value="dessert">Dessert table, 20 cups (R1 500)</label>
+                    <label class="choice"><input type="checkbox" name="extras" value="canapes">Canapes, 20 pieces (R2 500)</label>
+                    <label class="choice"><input type="checkbox" name="extras" value="cake">Custom cake (from R800)</label>
+                    <label class="choice"><input type="checkbox" name="extras" value="fingerfood">Finger food spread (from R3 500)</label>
                 </fieldset>
+
+                <fieldset>
+                    <legend>How should we respond?</legend>
+                    <label class="choice"><input type="radio" name="contact-pref" value="Email" checked>By email</label>
+                    <label class="choice"><input type="radio" name="contact-pref" value="Phone" checked>By phone</label>
+                </fieldset>
+
+                <p>
+                    <label for="notes">Anything else we should know?</label>
+                    <textarea id="notes" name="notes" rows="4" maxlength="900"></textarea>
+                </p>
+
+                <p class="actons">
+                    <button type="submit" class="btn">Get my estimate</button>
+                     <button type="reset" class="btn btn-dark">Clear form</button>
+                </p>
             </form>
         </section>
+
+        <!--The response will appear here without the customer reloading the page-->
+           <aside class="panel" id="result" aria-live="polite">
+            <h2>Your estimate</h2>
+            <p>Complete the form and press <strong>Get my estimate</strong>. Your price estimate and availability note will appear here.</p>
+            <p>Prefer to talk? Call <a href="tel:+27685360225">068 536 0225 </a>.</p>
+           </aside>     
      </main>
+
+        <footer class="site-footer">
+        <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" width="56" height="56">
+        <h3>KOOKING WITH KHWEZI</h3>
+        <p>Bringing fresh and organic food to the community</p>
+      </div>
+
+        <div>
+          <h3>Quick links</h3>
+        <ul>
+            <li><a href="../index.html">HOME</a></li>
+             <li><a href="about.html">ABOUT</a></li>
+              <li><a href="menu.html">MENUS</a></li>
+               <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                 <li><a href="enquiry.html">Enquire</a></li>
+                 <li><a href="contact.html">CONTACT US</a></li>
+        </ul>
+        </div>
+
+        <div>
+          <h3>Business Details</h3>
+        <ul>
+          <li>Email: <a href="mailto:khwezilomso686@gmail.com">Khwezilomso686@gmail.com</a></li>
+          <li>Phone: <a href="tel:+27685360225">068 536 0225</a></li>
+          <li>
+            Follow us on:
+            <a href="https://www.instagram.com/khwezis_mobile_kitchen?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer">Instagram</a> |
+             <a href="https://www.tiktok.com/@kooking_with_khwezi?_r=1&_t=ZS-9AFSSzVnfZi" target="_blank" rel="noopener noreferrer">TikTok</a>    
+          </li>
+        </ul>
+        </div>
+
+        <div class="footer-map">
+            <h3>Find Us</h3>
+          <address>66 Loop Street, CBD, <br> Rustenburg, North West</address>
+          <p><a href="contact.html#find-us">View our interactive map</a></p>
+           </div>
+        </div>
+    </div>
+     <p class="copyright"> &copy; <span id="year">2026</span> Kooking with Khwezi. All rights reserved.</p>
+        
+    </footer>
+    <script src="../Scripts/main.js"></script>
+    <script src="../Scripts/enquiry.js"></script>
+
 </body>
 </html>
