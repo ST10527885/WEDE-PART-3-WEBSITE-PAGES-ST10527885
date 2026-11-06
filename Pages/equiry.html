@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kooking with Khwezi - Enquiry</title>
+
+    <meta name="description" content="Tell us about your special event and get an instant catering estimate and availability note from Kooking with Khwezi">
+    <meta name="keywords" content="catering enquiry, catering quote Rustenburg, wedding catering, event catering estimate">
+
+      <!-- Google Fonts: Playfair Display (headings) + Lato (body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <!-- One external stylesheet shared by every page -->
+    <link rel="stylesheet" href="../Styles/styles.css">
+</head>
+<body>
+
+     <!--Header with sticky top bar with logo, name and navigation-->
+    <header class="site-header">
+       <div class="header-inner">
+      <a class="brand" href="../index.html">
+       <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="64" height="64">
+    <span>KOOKING WITH KHWEZI</span></a>
+       <!-- Checkbox and label toggle the mobile menu -->
+      <input type="checkbox" id="nav-toggle" class="nav-toggle">
+      <label for="nav-toggle" class="nav-burger" aria-label="Open or close the menu">&#9776;</label>
+
+        <nav class="nav" aria-label="Main navigation">
+
+        <ul>
+            <li><a href="../index.html">HOME</a></li>
+             <li><a href="about.html">ABOUT</a></li>
+              <li><a href="menu.html"></a></li>
+               <li><a href="gallery.html">GALLERY</a></li>
+                <li><a href="services.html">SERVICES</a></li>
+                 <li><a href="contact.html">CONTACT US</a></li>
+                 <li><a href="equiry.html" aria-current="page">Enquire</a></li>
+        </ul>
+    </nav>
+       </div>
+    </header>
+
+    <!--Hero band-->
+    <section class="hero hero--page">
+        <img class="hero-bg" src="../Assets/images/desertable-800.png.jpg" alt="">
+        <div class="hero-inner">
+            <h1>Catering Enquiry</h1>
+            <p>Tell us about your event and see an estimate straight away.</p>
+        </div>
+    </section>
+
+    <!--New page, the purpose of this page is for customers to ask about a service anf get an estimated cost and availability response.-->
+     <main class="section two-col">
+        <section>
+            <h2>Enquire About Our Services</h2>
+            <p>Fill in the details below. We will display an estimate and let you know about the availability of the date you have picked.</p>
+
+            <form class="form" id="enquiry form" action="#" method="post" novalidate>
+                <p>
+                    <label for="enq-name">Full Name:</label>
+                    <input type="text" id="enq-name" name="enq-name" autocomplete="name">
+                </p>
+                   
+                <p>
+                    <label for="email">Email Address:</label>
+                    <input type="email" id="enq-email" name="email" autocomplete="email">
+
+                </p>
+
+                <p>
+                     <label for="phone">Phone Number:</label>
+                    <input type="tel" id="enq-phone" name="phone" autocomplete="tel">
+                </p>
+
+                <p>
+                    <label for="event-type">Type of event:</label>
+                    <select id="event-type" name="event-type">
+                        <option value="">Please choose&hellip;</option>
+                        <option value="wedding">Wedding</option>
+                        <option value="corporate">Corporate function</option>
+                        <option value="private">Private catering</option>
+                        <option value="birthday">Birthday party</option>
+                        <option value="funeral">Funeral or memorial</option>
+                        <option value="weekday">Weekday meals (pickup)</option>
+                         <option value="weekday">Weekday meals (delivery)</option>
+                    </select>
+                </p>
+
+                <p>
+                    <label for="guests" id="guests-label">Number of guests:</label>
+                    <input type="number" id="guests" name="guests" min="1" inputmode="numeric">
+                </p>
+
+                <p>
+               <label for="venue">Town and venue:</label>
+               <input type="text" id="venue" autocomplete="off">
+                </p>
+
+                <fieldset>
+                    <legend>Add extras (optional)</legend>
+                    
+                </fieldset>
+            </form>
+        </section>
+     </main>
+</body>
+</html>
