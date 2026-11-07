@@ -13,7 +13,7 @@ var IMG = '../Assets/images/';
         desc: 'Fresh fruits picked straight from our farm to your table.',
         img: 'Harvest-Table-800.jpg', img400: 'Harvest-Table-400.jpg',
         alt: 'Harvest table laid out with fresh fruit'},
-     {cat: 'events', name: 'Harvest Table', price: 1500, label: 'Serving of 20 cups: R1 500',
+     {cat: 'events', name: 'Dessert Table', price: 1500, label: 'Serving of 20 cups: R1 500',
         desc: 'Various flavours from peppermint crisp tart cups to Choclate mousse cups.',
         img: 'desertable-800.png.jpg', img400: 'desertable-400.png.jpg',
         alt: 'Dessert table'},   
