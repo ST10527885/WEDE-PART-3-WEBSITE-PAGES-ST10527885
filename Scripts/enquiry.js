@@ -123,16 +123,128 @@ if (enquiryForm){
                  updateGuestLabel();
 
                  /* Processing and response */
+                 var result = document.getElementById('result');
+                 var defaultResult = result.innerHTML;
 
-                 
+                 enquiryForm.addEventListener('reset', function (){
+                    rules.forEach(function (r) {clearError(document.getElementById(r.id));});
+                    result.innerHTML = defaultResult;
+                    setTimeout(updateGuestLabel, 0);
+                 });
 
-                 
-             
-            
+                 enquiryForm.addEventListener('sumbit', function (e) {
+                    e.preventDefault()
+                    var firstBad = null;
 
+                    rules.forEach(function (rule){
+                        var input = document.getElementById(rule.id);
+                        var problem = rule.check(input.value)
+                       if (problem) {
+                        showError(input, problem);
+                        if (!firstBad) {firstBad = input;}
+                       }else{
+                        clearError(input);
+                       }
+                    });
+                    if (firstBad) { firstBad.focus(); return; }
 
+                    /*collect the validated values */
+                    var type = val ('event-type');
+                    var cfg = EVENTS[type];
+                    var guest = Number(val('guests'));
+                    var eventDate = parseDate (val('event-date'));
+                    var prettyDate = eventDate.toLocaleDateString('en-ZA', {weekday:'long', day: 'numeric', month: 'long', year: 'numeric'});
+                    var pref = enquiryForm.querySelector('input[name="contact-pref"]:checked').value;
+                    var notes = val('notes');
 
-        
-     
+                    /*work out the estimate */
+                    var total = 0;
+                    var breakdown = [];
+                    if (cfg.perMeal){
+                        total = guest * cfg.perHead;
+                        breakdown.push(guest + 'meals at' + rand(cfg.perMeal) + 'each:' + rand(total));
+                    }else{
+                        var extraGuests = Math.max(0, guests - cfg.included);
+                        var guestCost = extraGuests * cfg.perHead;
+                        total = cfg.base + guestCost;
+                        breakdown.push('Package from' + rand(cfg.base) + '(covers up to '+ cfg.included +' guests)');
+                        if (extraGuests > 0){
+                            breakdown.push(extraGuests + ' extra guests at ' + rand(cfg.perHead) + ' each: ' + rand(guestCost));
+                        }
+                    }
+                    var chosenExtras = [];
+                    enquiryForm.querySelectorAll('input[name="extras"]:checked').forEach(function (box) {
+                        var ex = EXTRAS[box.value];
+                        total += ex.price;
+                        chosenExtras.push(ex.label);
+                        breakdown.push(ex.label + ':' + rand(ex.price));
+                    });
 
-}
+                    /*Availability */
+                    var days = Math.round ((eventDate - today) /86400000);
+                    var availability;
+                    if (days < cfg.notice) {
+                        availability = 'Short notice: we normally need at least' + cfg.notice +
+                        (cfg.notice === 1? 'day' : 'days') + ' for ' + cfg.label.toLowerCase() + '. Please phone ' + BUSINESS_PHONE + ' to check if we can fit you in. ';
+
+                    }else{
+                        availability = 'Your date meets our usual notice period (' + cfg.notice + (cfg.notice === 1 ? 'day' : 'days') +'). Khwezi will confirm availability when she replies.';
+                    }
+
+                    /*compile an email the customer can send */
+
+                   var lines = [
+                    'Name:' + val('enq-name'),
+                    'Email: ' + val('enq-email'),
+                    'Phone: ' + val('enq-phone'),
+                    'Event: ' + cfg.label,
+                    (type === 'weekday' ? 'Meals: ' : 'Guests: ') + guests,
+                    'Date: ' + prettyDate,
+                    'Venue / town: ' + val('venue'),
+                    'Extras: ' + (chosenExtras.length ? chosenExtras.join(', '): 'None'),
+                    'Prefer to be contacted by: ' + pref,
+                    'Estimate shown: ' + rand(total),
+                    'Notes: ' + (notes || 'None')
+                   ];
+                   var mailto = 'malito:' + BUSINESS_EMAIL +
+                   '?subject=' + encodeURIComponent('Catering enquiry: ' + cfg.label + ' on ' + prettyDate) +
+                   '&body=' + encodeURIComponent(lines.join('\n'));
+                   
+                   // show the response
+                   result.innerHTML = '';
+                   result.classList.add('result-panel');
+                   result.appendChild(el('h2', '', 'Your estimate'));
+                   result.appendChild(el('p', 'estimate', rand(total)));
+                   result.appendChild(el('p', 'small', 'This is an estimate only. Khwezi confirms the final quote sfter reading your enquiry'));
+
+                   var dl = el('dl');
+                   [['Event, cfg.label'],
+                   [type === 'weekday' ? 'Meals' : 'Guests', String(guests)],
+                   ['Date', prettyDate],
+                   ['Venue / town', val('venue')],
+                   ['Contact by', pref]].forEach(function (pair) {
+                     dl.appendChild(el('dt', '', pair[0]));
+                     dl.appendChild(el('dd', '', pair[1]));
+                   });
+                   result.appendChild(dl);
+
+                   var ul = el('ul', 'breakdown');
+                   breakdown.forEach(function (line) { ul.appendChild(el('li', '', line)); });
+                   result.appendChild(ul);
+
+                   result.appendChild(el('p', 'notice' + (days < cfg.notice ? ' notice-warn' : ''), availability));
+
+                   var actions = el('div', 'actions');
+                   var send = el('a', 'btn', 'Email this enquiry to Khwezi');
+                   send.herf = mailto;
+                   var call = el('a', 'btn btn-dark', 'Phone ' + BUSINESS_PHONE);
+                   call.herf = 'tel:+27685360225';
+                   actions.appendChild(send);
+                   actions.appendChild(call);
+                   actions.appendChild(actions);
+
+                   result.setAttribute('tabindex', '-1');
+                   result.focus();
+                   result.scrollIntoView({behavior: 'smooth', block: 'start'});
+                });
+            }
