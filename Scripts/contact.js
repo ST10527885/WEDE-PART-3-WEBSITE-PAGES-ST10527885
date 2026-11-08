@@ -1,6 +1,8 @@
 
 /*Contact js */
 
+var CONTACT_EMAIL = 'khwezilomso686@gmail.com';
+
 var form = document.getElementById('contact-form');
 
 if (form) {
@@ -17,7 +19,7 @@ if (form) {
 
         {id: 'message',
          ok: function (v) {return v.trim ().length >= 10;},
-         msg: 'Please write at least 10 characters.'}
+         msg: 'Please write between 10 and 1000 characters.'}
     ];
 
     function clearError(input){
@@ -69,7 +71,7 @@ if (form) {
         var email = document.getElementById('email').value.trim();
         var phone = document.getElementById('phone').value.trim();
         var reasonSelect = document.getElementById('reason');
-        var reason = reasonSelect.options[reasonSelect.selectIndex].text;
+        var reason = reasonSelect.options[reasonSelect.selectedIndex].text;
         var message = document.getElementById('message').value.trim();
         
         var subject = 'Website message: ' + reason + ' ('+ name +')';
@@ -85,7 +87,7 @@ if (form) {
         
         var mailto = 'mailto:' + CONTACT_EMAIL +
           '?subject=' + encodeURIComponent(subject) +
-          '&body=' + encodeURIComponent;
+          '&body=' + encodeURIComponent(body);
 
           var panel = document.createElement('div');
           panel.className = 'form-success';
@@ -110,6 +112,7 @@ if (form) {
           var again = document.createElement('button');
           again.type = "button";
           again.className = 'btn btn-dark';
+          again.textContent = 'Write another message';
           again.addEventListener('click', function () { window.location.reload ();});
 
           panel.appendChild(h);
