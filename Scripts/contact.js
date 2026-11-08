@@ -34,6 +34,7 @@ if (form) {
         var note = document.createElement('span');
         note.className = 'error-msg';
         note.id = input.id + '-error';
+        note.setAttribute('role', 'alert');
         note.textContent = msg;
         input.insertAdjacentElement('afterend', note);
     }
@@ -65,14 +66,61 @@ if (form) {
 
         //Swap the form for thank you message
         var name = document.getElementById('name').value.trim();
-        var thanks = document.createElement('div');
-        thanks.className = 'form-success';
-        var h = document.createElement('h3');
-        h.textContent = 'Thank you, ' + name + '!';
-        var p = document.createElement('p');
-        p.textContent = 'We have received your enquiry and we will get back to you shortly.';
-        thanks.appendChild(h);
-        thanks.appendChild(p);
-        form.replaceWith(thanks);
+        var email = document.getElementById('email').value.trim();
+        var phone = document.getElementById('phone').value.trim();
+        var reasonSelect = document.getElementById('reason');
+        var reason = reasonSelect.options[reasonSelect.selectIndex].text;
+        var message = document.getElementById('message').value.trim();
+        
+        var subject = 'Website message: ' + reason + ' ('+ name +')';
+        var body = [
+            'Name: ' + name,
+            'Email: ' + email,
+             'Phone: ' + (phone || 'Not provided' ),
+             'Type of message: ' + reason,
+             '',
+             'Message:',
+             message
+        ].join('\n');
+        
+        var mailto = 'mailto:' + CONTACT_EMAIL +
+          '?subject=' + encodeURIComponent(subject) +
+          '&body=' + encodeURIComponent;
+
+          var panel = document.createElement('div');
+          panel.className = 'form-success';
+          panel.setAttribute('role', 'status');
+
+          var h = document.createElement('h3');
+          h.textContent = 'Your email is ready, ' + name + '!';
+
+          var p = document.createElement('p');
+          p.textContent = 'Your email app should open with your message filled in. ' + 
+          'Press send there to finish. If nothing opened, use the button below.';
+
+          var link = document.createElement('a');
+          link.className = 'btn';
+          link.href = mailto;
+          link.textContent = 'Open my email app';
+
+          var preview = document.createElement('pre');
+          preview.className = 'email-preview';
+          preview.textContent = 'To: ' + CONTACT_EMAIL + '\nSubject: ' + subject + '\n\n' + body;
+
+          var again = document.createElement('button');
+          again.type = "button";
+          again.className = 'btn btn-dark';
+          again.addEventListener('click', function () { window.location.reload ();});
+
+          panel.appendChild(h);
+          panel.appendChild(p);
+          panel.appendChild(link);
+          panel.appendChild(preview);
+          panel.appendChild(again);
+          form.replaceWith(panel);
+
+        window.location.href = mailto;
+        
+       
     });
 }
