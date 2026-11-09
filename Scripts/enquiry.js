@@ -165,7 +165,7 @@ if (enquiryForm){
                     var total = 0;
                     var breakdown = [];
                     if (cfg.perMeal){
-                        total = guest * cfg.perMeal;
+                        total = guests * cfg.perMeal;
                         breakdown.push(guests + ' meals at ' + rand(cfg.perMeal) + ' each: ' + rand(total));
                     }else{
                         var extraGuests = Math.max(0, guests - cfg.included);
@@ -240,9 +240,9 @@ if (enquiryForm){
 
                    var actions = el('div', 'actions');
                    var send = el('a', 'btn', 'Email this enquiry to Khwezi');
-                   send.herf = mailto;
+                   send.href = mailto;
                    var call = el('a', 'btn btn-dark', 'Phone ' + BUSINESS_PHONE);
-                   call.herf = 'tel:+27685360225';
+                   call.href = 'tel:+27685360225';
                    actions.appendChild(send);
                    actions.appendChild(call);
                    result.appendChild(actions);
