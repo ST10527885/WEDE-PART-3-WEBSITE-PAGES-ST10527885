@@ -166,7 +166,7 @@ if (enquiryForm){
                     var breakdown = [];
                     if (cfg.perMeal){
                         total = guest * cfg.perMeal;
-                        breakdown.push(guest + ' meals at ' + rand(cfg.perMeal) + ' each: ' + rand(total));
+                        breakdown.push(guests + ' meals at ' + rand(cfg.perMeal) + ' each: ' + rand(total));
                     }else{
                         var extraGuests = Math.max(0, guests - cfg.included);
                         var guestCost = extraGuests * cfg.perHead;

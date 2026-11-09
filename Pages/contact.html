@@ -7,7 +7,7 @@
     <title>Kooking with Khwezi - Contact Us</title>
 
     <!--Meta description-->
-    <meta name="description" content="send Kooking with Khwezi a message, find our kitchen at 66 Loop street, Rustenburg, and see our location on the interavtive map.">
+    <meta name="description" content="send Kooking with Khwezi a message, find our kitchen at 66 Loop street, Rustenburg, and see our location on the map.">
 
     <!--Meta Keywords-->
     <meta name="keywords" content="contact Kooking with Khwezi, caterer Rustenburg, 66 Loop Street, catering contact, Rustenburg map">
@@ -19,7 +19,7 @@
     <!-- Google Fonts: Playfair Display (headings) and Lato (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@400;700&family=Playfair+Display:ital,wght@400;700&display=swap" rel="stylesheet">
 <!-- One external stylesheet shared by every page -->
     <link rel="stylesheet" href="../Styles/styles.css">
 </head>
@@ -41,7 +41,7 @@
               <li><a href="menu.html">MENUS</a></li>
                <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="services.html">SERVICES</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="enquiry.html">ENQUIRY</a></li>
                  <li><a href="contact.html" class="current" aria-current="page">CONTACT US</a></li>
         </ul>
     </nav>
@@ -59,9 +59,17 @@
     <main class="section two-col">
   <section>
     <h2>Send Us a Message</h2>
-    <p>Fill in the form for enquiries </p>
+    <p>Use thr form for general questions and feedback. Planning an event? Try the <a href="enquiry.html">enquiry form</a></p>
 <!--Enquiry form + business's details and location-->
-   <form class="form" id="contact-form" action="#" method="post" novalidate>
+
+<!-- NEW (POE 4.1): the action attribute now holds the web address the form data is sent to.
+        contact.js sends the form to this address with fetch (AJAX). -->
+
+<form class="form" id="contact-form" action="https://formspree.io/f/mrppwnke" method="post" novalidate>
+   <
+
+    <!-- NEW (security): hidden "honeypot" field. People never see it, but spam robots fill it in, and the form service discards those messages. -->
+                <p class="honeypot" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
 
     <p> <label for="name">Full Name:</label>
         <input
@@ -90,7 +98,7 @@
 
 <p>
     <label for="message">Message:</label>
-    <textarea id="message" name="message" rows="5" ></textarea>
+    <textarea id="message" name="message" rows="5" maxlength="1000" ></textarea>
 </p>
 
 <p>
@@ -105,7 +113,7 @@
         66 Loop Street, CBD, Rustenburg, North West
     </p>
     <p>Telephone Number: <a href="tel:+27685360225">068 536 0225</a></p>
-    <p> Email Address:<a href="tel:+27685360225">khwezilomso686@gmail.com</a></p>
+    <p> Email Address:<a href="mailto:khwezilomso686@gmail.com">khwezilomso686@gmail.com</a></p>
     <p>Operating Hours: <br> Monday - Friday: 10:00 - 19:00 <br> Saturday - Sunday: Closed for events </p> 
 </aside>
     </main>
@@ -141,7 +149,7 @@
 <footer class="site-footer">
         <div class="footer-grid">
       <div class="footer-brand">
-        <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" width="56" height="56">
+        <img src="../Assets/images/Kooking with Khwezi Catering Emblem.png" alt="Kooking with Khwezi logo" width="56" height="56">
         <h3>KOOKING WITH KHWEZI</h3>
         <p>Bringing fresh and organic food to the community</p>
       </div>
@@ -154,7 +162,7 @@
               <li><a href="menu.html">MENUS</a></li>
                <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="services.html">SERVICES</a></li>
-                <li><a href="enquiry.html">Enquiry</a></li>
+                <li><a href="enquiry.html">ENQUIRY</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
         </div>

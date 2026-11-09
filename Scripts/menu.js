@@ -143,7 +143,7 @@ var IMG = '../Assets/images/';
         list.forEach(function (item) {grid.appendChild(makeCard(item));});
 
         emptyMsg.hidden = list.length !== 0;
-        countLine.textContent = 'Showing' + list.length + ' of ' + MENU.length + ' items';
+        countLine.textContent = 'Showing ' + list.length + ' of ' + MENU.length + ' items';
     }
 
     searchBox.addEventListener('input', function () {

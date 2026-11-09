@@ -16,7 +16,7 @@
       <!-- Google Fonts: Playfair Display (headings) + Lato (body) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@400;700&family=Playfair+Display:ital,wght@400;700&display=swap" rel="stylesheet">
   <!-- One external stylesheet shared by every page -->
     <link rel="stylesheet" href="../Styles/styles.css">
 </head>
@@ -37,10 +37,10 @@
         <ul>
             <li><a href="../index.html">HOME</a></li>
              <li><a href="about.html">ABOUT</a></li>
-              <li><a href="menu.html">Menus</a></li>
+              <li><a href="menu.html">MENUS</a></li>
                <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="services.html">SERVICES</a></li>
-                 <li><a href="enquiry.html" aria-current="page">Enquire</a></li>
+                 <li><a href="enquiry.html" aria-current="page">ENQUIRY</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
     </nav>
@@ -61,6 +61,13 @@
         <section>
             <h2>Enquire About Our Services</h2>
             <p>Fill in the details below. We will display an estimate and let you know about the availability of the date you have picked.</p>
+
+            <!-- NEW (POE 4.1): the action attribute now holds the web address the form data is sent to.
+        contact.js sends the form to this address with fetch (AJAX). -->
+
+<form class="form" id="contact-form" action="https://formspree.io/f/mrppwnke" method="post" novalidate>
+
+                 <p class="honeypot" aria-hidden="true"><label>Leave this empty <input type="text" name="_gotcha" tabindex="-1" autocomplete="off"></label></p>
 
             <form class="form" id="enquiry-form" action="#" method="post" novalidate>
                 <p>
@@ -105,7 +112,7 @@
 
                 <p>
                <label for="venue">Town and venue:</label>
-               <input type="text" id="venue" autocomplete="off">
+               <input type="text" id="venue" name="venue" autocomplete="off">
                 </p>
 
                 <fieldset>
@@ -158,7 +165,7 @@
               <li><a href="menu.html">MENUS</a></li>
                <li><a href="gallery.html">GALLERY</a></li>
                 <li><a href="services.html">SERVICES</a></li>
-                 <li><a href="enquiry.html">Enquire</a></li>
+                 <li><a href="enquiry.html">ENQUIRY</a></li>
                  <li><a href="contact.html">CONTACT US</a></li>
         </ul>
         </div>

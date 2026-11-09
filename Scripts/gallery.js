@@ -1,6 +1,6 @@
 /*Gallery.js (New for part 3): Added to meet the POE's requirements
-This will be linked to the gallery.html in order for pictures to br enlarged when clients click on the images
-Without this page the images would still the same as part 2 */
+This will be linked to the gallery.html in order for pictures to be enlarged when clients click on the images
+Without this page the images would still be the same as part 2 */
 
 var lblinks = document.querySelectorAll('.lb-link');
 
@@ -44,7 +44,7 @@ if (lblinks.length > 0) {
         var link = lblinks[current];
         bigImg.src = link.href;
         bigImg.alt = link.querySelector('img').alt;
-        cap.textContent = (link.dataset.caption || '') + '(' + (current + 1) + ' of ' + lblinks.length + ')';
+        cap.textContent = (link.dataset.caption || '') + ' (' + (current + 1) + ' of ' + lblinks.length + ')';
 
     }
     function openBox(i) {
