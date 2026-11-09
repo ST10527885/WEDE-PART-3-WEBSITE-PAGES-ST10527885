@@ -32,15 +32,7 @@ This website is a responsive, multi-page site built with HTML, CSS and JavaScrip
 3. **Inform customers** – show menus, package prices and operating hours clearly so customers do not have to wait for a quotation.
 4. **Be easy to find** – apply on-page SEO (titles, descriptions, keywords, headings, alt text) and local details.
 5. **Work on every device** – responsive layout, navigation and images from small phones to desktop.
-**Key performance indicators (KPIs)**
- 
-| KPI | What it measures |
-|---|---|
-| Number of enquiry form submissions per month | Lead generation |
-| Number of contact messages per month | Customer engagement |
-| Visitors who go from Services/Menus to Enquiry | Conversion path |
-| Mobile vs desktop visits | Whether the responsive design is serving the audience |
-| Bounce rate and time on page | Content quality and user experience |
+
  
 ## Key Features and Functionality
  
@@ -61,8 +53,7 @@ Home (index.html)
 ├── About (Pages/about.html)
 ├── Menus (Pages/menu.html)
 ├── Gallery (Pages/gallery.html)
-├── Services (Pages/services.html)
-│     └── links to Enquiry (pre-selects the event type)
+├── Services (Pages/services.html)    
 ├── Enquiry (Pages/enquiry.html)
 └── Contact Us (Pages/contact.html)
 ```
@@ -103,16 +94,16 @@ Home (index.html)
 | **Headings font** | Playfair Display (Google Fonts), serif fallback Georgia |
 | **Body font** | Lato (Google Fonts), fallback Arial/sans-serif |
 | **Type scale** | Fluid sizes using `clamp()` for body text, `h1`, `h2` and `h3` |
-| **Layout** | CSS Grid for page sections, card grids and the footer; Flexbox for the header, navigation and button groups |
+
 | **Style** | Dark header and footer, warm ivory background, rounded cards with soft shadows, gold accent underlines on `h2` headings |
  
 ## Timeline and Milestones
  
 | Milestone | Target date | Status |
 |---|---|---|
-| Part 1 – proposals, content research, sitemap, HTML structure, GitHub repository | [Date] | Complete |
-| Part 2 – external stylesheet, responsive design, Part 1 feedback changes | [Date] | Complete |
-| Part 3 – JavaScript features, SEO, forms and validation, deployment, Part 2 feedback changes | [Date] | Complete |
+| Part 1 – proposals, content research, sitemap, HTML structure, GitHub repository | Complete |
+| Part 2 – external stylesheet, responsive design, Part 1 feedback changes | Complete |
+| Part 3 – JavaScript features, SEO, forms and validation, deployment, Part 2 feedback changes | Complete |
  
 ---
  
@@ -133,7 +124,7 @@ Home (index.html)
 - **Layout:** Grid and Flexbox; multi-column on desktop switching to a single column on small screens.
 - **Decoration:** borders, border radius, box shadows, background colours, gradient-free flat colour scheme, hover lift on cards.
 - **Pseudo-classes and states:** `:link`, `:visited`, `:hover`, `:active`, `:focus-visible`, `:focus`, `:first-child`, `:nth-child(even)`, `::first-letter`, `::after`.
-- **Responsive design:** breakpoints at **1050px**, **900px**, **600px** and **400px**; hamburger menu below 600px (checkbox toggle, no JavaScript); relative units (`rem`, `%`, `vw`, `ch`); responsive images with `srcset` and `sizes`.
+
 - **Screenshot evidence** (desktop, tablet, mobile):
   | Page | Desktop | Tablet | Mobile |
   |---|---|---|---|
@@ -183,20 +174,11 @@ Home (index.html)
 - `sitemap.xml` lists all seven pages with a last-modified date and priority.
 ### Deployment
  
-The site is deployed at: [live site link] using [GitHub Pages / Netlify].
+The site is deployed at: [live site link] .
  
 ---
  
-## Testing
- 
-| Test | Result |
-|---|---|
-| Navigation links on all pages | [Result] |
-| Forms – valid and invalid input | [Result] |
-| Lightbox, accordion, search, filter and sort | [Result] |
-| Chrome / Edge / Firefox | [Result] |
-| Desktop, tablet and phone screen sizes (browser developer tools) | [Result] |
-| HTML and CSS validation (W3C) | [Result] |
+
  
 ---
  
@@ -205,32 +187,32 @@ The site is deployed at: [live site link] using [GitHub Pages / Netlify].
 Update the dates to match your commit history.
  
 ### Part 1
-- **[Date]** – Created the project folder structure and the home page.
-- **[Date]** – Added About, Menu, Gallery, Services, Enquiry and Contact pages with semantic HTML.
-- **[Date]** – Added navigation menu and footer links to all pages; added code comments.
-- **[Date]** – Added README, sitemap and Part 1 documentation.
+ – Created the project folder structure and the home page.
+ – Added About, Menu, Gallery, Services, Enquiry and Contact pages with semantic HTML.
+ – Added navigation menu and footer links to all pages; added code comments.
+ – Added README, sitemap and Part 1 documentation.
 ### Part 2
-- **[Date]** – Created `styles.css` and linked it to all pages; added CSS reset, variables and base styles.
-- **[Date]** – Added typography, Grid and Flexbox layouts, card styles, button styles and pseudo-class styling.
-- **[Date]** – Added responsive breakpoints, hamburger menu, responsive images with `srcset` and `sizes`.
-- **[Date]** – Added screenshot evidence for desktop, tablet and mobile.
+ – Created `styles.css` and linked it to all pages; added CSS reset, variables and base styles.
+ – Added typography, Grid and Flexbox layouts, card styles, button styles and pseudo-class styling.
+– Added responsive breakpoints, hamburger menu, responsive images with `srcset` and `sizes`.
+ – Added screenshot evidence for desktop, tablet and mobile.
 ### Part 3
-- **[Date]** – **Feedback from Part 2:** replaced fixed font sizes with fluid `clamp()` sizes so text scales smoothly on small phones.
-- **[Date]** – **Feedback from Part 2:** corrected the card grid so it changes from three columns to two and then one column at the correct breakpoints.
-- **[Date]** – **Feedback from Part 2:** allowed long email addresses in the footer to wrap on small phones.
-- **[Date]** – **Feedback from Part 2:** allowed the company name in the header to wrap on very small screens (400px and below) so the menu button is no longer pushed off screen.
-- **[Date]** – Added `menu.js` with dynamic menu rendering, search, category filter and sort.
-- **[Date]** – Added `gallery.js` and lightbox styles to the Gallery page.
-- **[Date]** – Added `services.js` and the FAQ accordion to the Services page.
-- **[Date]** – Built the enquiry form with validation, estimate calculation and availability response (`enquiry.js`).
-- **[Date]** – Built the contact form with validation and email compilation (`contact.js`); added honeypot spam field.
-- **[Date]** – Fixed `enquiry.js`: corrected the `guest` typo that stopped weekday estimates from working; corrected `herf` to `href` so the email and phone buttons work; weekday delivery now follows the same rules as weekday pickup (meals label, minimum of 1, Monday to Friday only).
-- **[Date]** – Added AJAX (`fetch`) submission to both forms, with a status message and an email-link backup; removed the contact form's automatic opening of the email app.
-- **[Date]** – Fixed invalid CSS (`soild`, `1 rem`, `warp`) so fieldset borders, padding and header wrapping apply.
-- **[Date]** – Fixed the enquiry page markup (one form with the correct id), added missing `target` and `rel` attributes to the contact page footer links, and corrected spelling mistakes on the Services and Contact pages.
-- **[Date]** – Created `robots.txt` and `sitemap.xml`.
-- **[Date]** – Added titles, meta descriptions, keywords, robots and revisit tags, and improved image alt text.
-- **[Date]** – Deployed the website and updated the README.
+ – **Feedback from Part 2:** replaced fixed font sizes with fluid `clamp()` sizes so text scales smoothly on small phones.
+ – **Feedback from Part 2:** corrected the card grid so it changes from three columns to two and then one column at the correct breakpoints.
+ – **Feedback from Part 2:** allowed long email addresses in the footer to wrap on small phones.
+ – **Feedback from Part 2:** allowed the company name in the header to wrap on very small screens (400px and below) so the menu button is no longer pushed off screen.
+ – Added `menu.js` with dynamic menu rendering, search, category filter and sort.
+– Added `gallery.js` and lightbox styles to the Gallery page.
+ – Added `services.js` and the FAQ accordion to the Services page.
+ – Built the enquiry form with validation, estimate calculation and availability response (`enquiry.js`).
+ – Built the contact form with validation and email compilation (`contact.js`); added honeypot spam field.
+ – Fixed `enquiry.js`: corrected the `guest` typo that stopped weekday estimates from working; corrected `herf` to `href` so the email and phone buttons work; weekday delivery now follows the same rules as weekday pickup (meals label, minimum of 1, Monday to Friday only).
+ – Added AJAX (`fetch`) submission to both forms, with a status message and an email-link backup; removed the contact form's automatic opening of the email app.
+ – Fixed invalid CSS (`soild`, `1 rem`, `warp`) so fieldset borders, padding and header wrapping apply.
+– Fixed the enquiry page markup (one form with the correct id), added missing `target` and `rel` attributes to the contact page footer links, and corrected spelling mistakes on the Services and Contact pages.
+ – Created `robots.txt` and `sitemap.xml`.
+ – Added titles, meta descriptions, keywords, robots and revisit tags, and improved image alt text.
+ – Deployed the website and updated the README.
 ---
  
 ## References
