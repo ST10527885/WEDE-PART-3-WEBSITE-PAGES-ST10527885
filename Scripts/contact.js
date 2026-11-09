@@ -120,10 +120,28 @@ if (form) {
           panel.appendChild(link);
           panel.appendChild(preview);
           panel.appendChild(again);
-          form.replaceWith(panel);
+          return panel;
+    
 
-        window.location.href = mailto;
-        
-       
+       /* AJAX submission: send the data without reloading the page */
+        var submitBtn = form.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+        submitBtn.textContent = 'Sending...';
+ 
+        fetch(form.action, {
+            method: 'POST',
+            body: new FormData(form),
+            headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+            if (!response.ok) { throw new Error('Send failed'); }
+            form.replaceWith(buildPanel(true));
+        }).catch(function () {
+            form.replaceWith(buildPanel(false));
+        });
     });
 }
+
+       
+        
+       
+  

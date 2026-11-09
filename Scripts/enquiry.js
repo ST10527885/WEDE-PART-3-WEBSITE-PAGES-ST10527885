@@ -72,7 +72,7 @@ if (enquiryForm){
 
              {id: 'guests', check: function (v){
                var type = document.getElementById('event-type').value;
-               var min = (type === 'weekday') ? 1 : 10;
+               var min = isWeekday(type)  ? 1 : 10;
                var n = Number (v);
                if (v.trim() === '' || !Number.isInteger(n) || n < min) {
                 return 'Please enter a whole number of ' + min + ' or more.';
@@ -84,7 +84,7 @@ if (enquiryForm){
                  if (!d) { return 'Please enter valid date.';}
                  if (d < today) {return 'Please choose today or a future date.';}
                  var type = document.getElementById('event-type').value;
-                 if (type === 'weekday' && (d.getDay() === 0 || d.getDay() === 6)) {
+                 if (isWeekday(type)  && (d.getDay() === 0 || d.getDay() === 6)) {
                     return 'Weekday meals are made Monday to Friday. Please choose a weekday.';
                  }
                  return ''; }},
@@ -116,7 +116,7 @@ if (enquiryForm){
                  var typeSelect = document.getElementById('event-type');
                  function updateGuestLabel(){
                     document.getElementById('guests-label').textContent =
-                    typeSelect.value === 'weekday' ? 'Number of meals:' : 'Number of guests:';
+                   isWeekday(typeSelect.value)  ? 'Number of meals:' : 'Number of guests:';
                  }
                  typeSelect.addEventListener('change', updateGuestLabel);
 
@@ -202,7 +202,7 @@ if (enquiryForm){
                     'Email: ' + val('enq-email'),
                     'Phone: ' + val('enq-phone'),
                     'Event: ' + cfg.label,
-                    (type === 'weekday' ? 'Meals: ' : 'Guests: ') + guests,
+                    (meals ? 'Meals: ' : 'Guests: ') + guests,
                     'Date: ' + prettyDate,
                     'Venue / town: ' + val('venue'),
                     'Extras: ' + (chosenExtras.length ? chosenExtras.join(', '): 'None'),
@@ -219,7 +219,7 @@ if (enquiryForm){
                    result.classList.add('result-panel');
                    result.appendChild(el('h2', '', 'Your estimate'));
                    result.appendChild(el('p', 'estimate', rand(total)));
-                   result.appendChild(el('p', 'small', 'This is an estimate only. Khwezi confirms the final quote sfter reading your enquiry'));
+                   result.appendChild(el('p', 'small', 'This is an estimate only. Khwezi confirms the final quote after reading your enquiry'));
 
                    var dl = el('dl');
                    [['Event', cfg.label],
@@ -250,5 +250,27 @@ if (enquiryForm){
                    result.setAttribute('tabindex', '-1');
                    result.focus();
                    result.scrollIntoView({behavior: 'smooth', block: 'start'});
-                });
-            }
+               
+
+                /* AJAX submission: send the data to the form service without reloading the page */
+        var data = new FormData(enquiryForm);
+        data.append('estimate', rand(total));
+        data.append('availability_note', availability);
+        var submitBtn = enquiryForm.querySelector('button[type="submit"]');
+        submitBtn.disabled = true;
+ 
+        fetch(enquiryForm.action, {
+            method: 'POST',
+            body: data,
+            headers: { 'Accept': 'application/json' }
+        }).then(function (response) {
+            if (!response.ok) { throw new Error('Send failed'); }
+            status.textContent = 'Thank you! Your enquiry has been sent to Khwezi. We will reply by ' + pref.toLowerCase() + '.';
+        }).catch(function () {
+            status.textContent = 'We could not send your enquiry automatically. Please use the email button below or phone us.';
+        }).then(function () {
+            submitBtn.disabled = false;
+        });
+    });
+}
+            
