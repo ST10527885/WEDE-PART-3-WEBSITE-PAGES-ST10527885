@@ -13,12 +13,13 @@ if (form) {
         {id: 'email',
          ok: function (v) {return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test (v.trim());},
          msg: 'Please enter a valid email address, e.g. name@example.com'},
-         {id: 'phone', ok: function (v) {return v.trim() === '' || /^[0-9 +]{10,15}$/.test(v.trim());},
+         {id: 'phone',
+         ok: function (v) { return v.trim() === '' || /^\+?[0-9 +]{10,15}$/.test(v.trim()); },
          msg: 'Please enter a valid phone number (10 to 15 digits).'   
         },
 
         {id: 'message',
-         ok: function (v) {return v.trim ().length >= 10;},
+         ok: function (v) {return v.trim ().length >= 10 && v.trim().length <= 1000; },
          msg: 'Please write between 10 and 1000 characters.'}
     ];
 
@@ -88,17 +89,17 @@ if (form) {
         var mailto = 'mailto:' + CONTACT_EMAIL +
           '?subject=' + encodeURIComponent(subject) +
           '&body=' + encodeURIComponent(body);
-
+        function buildPanel(sent){
           var panel = document.createElement('div');
           panel.className = 'form-success';
           panel.setAttribute('role', 'status');
 
           var h = document.createElement('h3');
-          h.textContent = 'Your email is ready, ' + name + '!';
+          h.textContent = sent ? 'Thank you, ' + name + '!' : 'Almost there, ' + name + '!';
 
           var p = document.createElement('p');
-          p.textContent = 'Your email app should open with your message filled in. ' + 
-          'Press send there to finish. If nothing opened, use the button below.';
+         p.textContent = sent ? 'Your message has been sent to Khwezi. A copy of what you sent is below. You can also send it from your own email app.'
+    : 'We could not send your message automatically. Press the button below to send it from your own email app.';
 
           var link = document.createElement('a');
           link.className = 'btn';
@@ -121,6 +122,7 @@ if (form) {
           panel.appendChild(preview);
           panel.appendChild(again);
           return panel;
+    }
     
 
        /* AJAX submission: send the data without reloading the page */

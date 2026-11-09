@@ -54,7 +54,7 @@ if (enquiryForm){
         return d.getFullYear() + '-' + String(d.getMonth() +1).padStart(2, '0') + '-' + String (d.getDate()).padStart(2, '0');
 
     }
-     var today = startOfDay(new Date());
+     var today = startOfDay(new Date()); // Stops people from picking a day in the past
      document.getElementById('event-date').min = iso(today);
 
      //Validation
@@ -155,7 +155,7 @@ if (enquiryForm){
                     /*collect the validated values */
                     var type = val ('event-type');
                     var cfg = EVENTS[type];
-                    var guests = Number(val('guests'));
+                    var meals = isWeekday(type);
                     var eventDate = parseDate (val('event-date'));
                     var prettyDate = eventDate.toLocaleDateString('en-ZA', {weekday:'long', day: 'numeric', month: 'long', year: 'numeric'});
                     var pref = enquiryForm.querySelector('input[name="contact-pref"]:checked').value;
@@ -171,7 +171,7 @@ if (enquiryForm){
                         var extraGuests = Math.max(0, guests - cfg.included);
                         var guestCost = extraGuests * cfg.perHead;
                         total = cfg.base + guestCost;
-                        breakdown.push('Package from' + rand(cfg.base) + '(covers up to '+ cfg.included +' guests)');
+                        breakdown.push('Package from ' + rand(cfg.base) + ' (covers up to '+ cfg.included +' guests)');
                         if (extraGuests > 0){
                             breakdown.push(extraGuests + ' extra guests at ' + rand(cfg.perHead) + ' each: ' + rand(guestCost));
                         }
@@ -198,7 +198,7 @@ if (enquiryForm){
                     /*compile an email the customer can send */
 
                    var lines = [
-                    'Name:' + val('enq-name'),
+                    'Name: ' + val('enq-name'),
                     'Email: ' + val('enq-email'),
                     'Phone: ' + val('enq-phone'),
                     'Event: ' + cfg.label,
@@ -237,6 +237,10 @@ if (enquiryForm){
                    result.appendChild(ul);
 
                    result.appendChild(el('p', 'notice' + (days < cfg.notice ? ' notice-warn' : ''), availability));
+
+                   var status = el('p', 'status-msg', 'Sending your enquiry to Khwezi...');
+                  status.setAttribute('role', 'status');
+                  result.appendChild(status); 
 
                    var actions = el('div', 'actions');
                    var send = el('a', 'btn', 'Email this enquiry to Khwezi');
