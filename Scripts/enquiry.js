@@ -156,6 +156,7 @@ if (enquiryForm){
                     var type = val ('event-type');
                     var cfg = EVENTS[type];
                     var meals = isWeekday(type);
+                    var guests = Number(val('guests'));
                     var eventDate = parseDate (val('event-date'));
                     var prettyDate = eventDate.toLocaleDateString('en-ZA', {weekday:'long', day: 'numeric', month: 'long', year: 'numeric'});
                     var pref = enquiryForm.querySelector('input[name="contact-pref"]:checked').value;
@@ -219,11 +220,11 @@ if (enquiryForm){
                    result.classList.add('result-panel');
                    result.appendChild(el('h2', '', 'Your estimate'));
                    result.appendChild(el('p', 'estimate', rand(total)));
-                   result.appendChild(el('p', 'small', 'This is an estimate only. Khwezi confirms the final quote after reading your enquiry'));
+                   result.appendChild(el('p', 'small', 'This is an estimate only. Khwezi confirms the final quote after reading your enquiry.'));
 
                    var dl = el('dl');
                    [['Event', cfg.label],
-                   [type === 'weekday' ? 'Meals' : 'Guests', String(guests)],
+                   [meals ? 'Meals' : 'Guests', String(guests)],
                    ['Date', prettyDate],
                    ['Venue / town', val('venue')],
                    ['Contact by', pref]].forEach(function (pair) {
